@@ -5,6 +5,9 @@ function resolveSrc(_path) {
 }
 // vue.config.js
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/care_frontend/'
+    : '/',
   lintOnSave: true,
   configureWebpack: {
     // Set up all the aliases we use in our app.

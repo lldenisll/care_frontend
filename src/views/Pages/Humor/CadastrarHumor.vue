@@ -14,7 +14,7 @@
         <b-row>
           <b-col lg="9">
              <label for="demo-sb">Use os botões para editar, e clique em salvar</label>
-              <b-form-spinbutton id="demo-sb" v-model="humor.ansiedade">  min="1" max="100"></b-form-spinbutton>
+              <b-form-spinbutton id="demo-sb" v-model="humor.ansiedade">  min="0" max="100"></b-form-spinbutton>
               <p class="text-center">Crises de hoje: {{this.humor.ansiedade}}  </p>
           </b-col>
           <b-col lg="3">

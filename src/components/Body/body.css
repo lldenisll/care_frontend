@@ -1,0 +1,27 @@
+.human-body {
+    width: 217px;
+    position: relative;
+    height: 290px;
+    display: block;
+
+  }
+  
+  .articulacao:hover {
+    cursor: pointer;
+  }
+  
+  .articulacao:hover {
+    fill: orange;
+  }
+  
+  .human-body svg {
+    position: absolute;
+
+    fill: #9e9ad6;
+  }
+  
+  
+  #area #data {
+    color: black;
+  
+  }

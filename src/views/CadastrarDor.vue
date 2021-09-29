@@ -12,104 +12,21 @@
               <h1 class="display-2 text-white">Olá {{usuario}}</h1>
               <p class="text-white mt-0 mb-5">Sou a Zohar, e espero que você esteja tendo um ótimo dia. <br> Me conta, como estão as suas dores hoje? Por favor, considere uma escala de 0 até 10</p>
               <b-button class="botao" v-b-modal.modal-1>Ver resumo da semana</b-button>
-
             </b-col>
-       <b-modal id="modal-1" size="xl" title="Resumo Semanal">
-          <tabela-dor></tabela-dor>
-  </b-modal>
+            <b-modal id="modal-1" size="xl" title="Resumo Semanal">
+              <tabela-dor></tabela-dor>
+            </b-modal>
           </b-row>
         </b-container>
       </b-container>
     </div>
-      <b-container fluid class="mt--6">
-      <b-row>
-        <b-col xl="10" class="order-xl-1">
-            <card>
-<b-form @change.native="enviarDor">
-    <b-row>
-        <b-col md="8">
-            <h6 class="heading-small text-muted mb-4 pt-4 pl-4">Escala de dor do dia {{date}}, {{semana}}</h6>
-        </b-col>
-        <b-col md="4 " class="pt-4" >
-            <a  href="#!" @click="enviarDor()" class="btn  btn-primary ">Salvar</a>
-        </b-col>
-    </b-row> 
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-                <b-form-checkbox v-model="rididez" switch class="mr-n2">
-                    <span v-if="this.rididez">
-                        <span class="sr-only"> Tive rigidez hoje</span>
-                    </span>
-                    <span v-else>
-                        <span class="sr-only"> Não tive rigidez hoje</span>
-                    </span>
-                </b-form-checkbox> 
-           </b-col>
-        </b-row>
-    </div>
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-            <label for="rating-10">Escala de dor nas mãos</label>
-                <b-form-rating  icon-half="emoji-dizzy-half" icon-full="emoji-dizzy-fill" icon-empty="emoji-dizzy" color="#0485D1"  id="rating-10" v-model="dor_mao" stars="10"></b-form-rating>
-            </b-col>
-        </b-row>
-    </div>
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-            <label for="rating-10">Escala de dor nos pés</label>
-                <b-form-rating  icon-half="emoji-dizzy-half" icon-full="emoji-dizzy-fill" icon-empty="emoji-dizzy" color="#0485D1"  id="rating-10" v-model="dor_pes" stars="10"></b-form-rating>
-            </b-col>
-        </b-row>
-    </div>
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-            <label for="rating-10">Escala de dor nos punhos</label>
-                <b-form-rating @change.native="enviarDor" icon-half="emoji-dizzy-half" icon-full="emoji-dizzy-fill" icon-empty="emoji-dizzy" color="#0485D1"  id="rating-10" v-model="dor_pulso" stars="10" ></b-form-rating>
-            </b-col>
-        </b-row>
-    </div>
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-            <label for="rating-10">Escala de dor nos cotovelo</label>
-                <b-form-rating  icon-half="emoji-dizzy-half" icon-full="emoji-dizzy-fill" icon-empty="emoji-dizzy" color="#0485D1"  id="rating-10" v-model="dor_cotovelo" stars="10"></b-form-rating>
-            </b-col>
-        </b-row>
-    </div>
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-            <label for="rating-10">Escala de dor nos joelho</label>
-                <b-form-rating  icon-half="emoji-dizzy-half" icon-full="emoji-dizzy-fill" icon-empty="emoji-dizzy" color="#0485D1"  id="rating-10" v-model="dor_joelho" stars="10"></b-form-rating>
-            </b-col>
-        </b-row>
-    </div>
 
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-            <label for="rating-10">Escala de dor nos tornozelo</label>
-                <b-form-rating  icon-half="emoji-dizzy-half" icon-full="emoji-dizzy-fill" icon-empty="emoji-dizzy" color="#0485D1"  id="rating-10" v-model="dor_tornozelo" stars="10"></b-form-rating>
-            </b-col>
-        </b-row>
-    </div>
-    <div class="pl-lg-4 pb-4">
-        <b-row>
-          <b-col lg="12">
-            <label for="rating-10">Escala de dor nos ombros</label>
-                <b-form-rating  icon-half="emoji-dizzy-half" icon-full="emoji-dizzy-fill" icon-empty="emoji-dizzy" color="#0485D1"  id="rating-10" v-model="dor_ombros" stars="10"></b-form-rating>
-            </b-col>
-        </b-row>
-    </div>
-</b-form>
-</card>
-        </b-col>
-
-      </b-row>
+    <b-container >
+      <b-col xl="11" >
+        <card style="height: 1000px">
+          <Body></Body>
+        </card>
+      </b-col>
     </b-container>   
 
 </div>
@@ -117,7 +34,7 @@
 <script>
 import axios from "axios";
 import TabelaDor from './TabelaDor.vue';
-
+import Body from '@/components/Body/Body';
 export default {
   data() {
     return {
@@ -140,6 +57,7 @@ export default {
   },
     components: {
       TabelaDor,
+      Body,
     },
   created() {
     this.getUser();
